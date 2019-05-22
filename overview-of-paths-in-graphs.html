@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+    <title>Leonvv | Paths in Graph Theory</title>
+   <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    
+    <div id='container'>
+        <a id='overview' href='/'>← <span>Top</span></a>
+        <h2>Paths in Graph Theory</h2>
+        
+<div id='paths-overview'>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Edges distinct</td>
+            <td>Vertices distinct</td>
+            <td>Visits all vertices</td>
+            <td>Visits all edges</td>
+            <td>Closed</td>
+        </tr>
+        <tr>
+            <td>Trail</td>
+            <td>x</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Simple Path</td>
+            <td>implied</td>
+            <td>x</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Cycle</td>
+            <td>implied</td>
+            <td>x</td>
+            <td></td>
+            <td></td>
+            <td>x</td>
+        </tr>
+        <tr>
+            <td>Traversable path</td>
+            <td>x</td>
+            <td></td>
+            <td>x</td>
+            <td>x</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Spanning path</td>
+            <td></td>
+            <td></td>
+            <td>x</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Eulerian path</td>
+            <td>x</td>
+            <td></td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+        <tr>
+            <td>Hamiltonian path</td>
+            <td>implied</td>
+            <td>x</td>
+            <td>x</td>
+            <td></td>
+            <td>x</td>
+        </tr>
+    </table>
+    <br />
+    Note that the definition of an Hamiltonian graph says nothing about whether its edges are distinct, however this is implied by the fact that the path visits all vertices exactly once. Also my definition of distinct edges does not include the first and last vertices for closed paths.
+    <br />
+    <br />
+    From the table a number of statements are obvious:
+    <br />
+    <ul>
+        <li>A cycle is a simple path</li>
+        <li>A traversable path is a trail</li>
+        <li>An Eulerian path is a traversable path, and also a trail</li>
+        <li>An Hamiltonian path is a cycle</li>
+        <li>An Hamiltonian path is a trail</li>
+        <li>An Hamiltonian path, an Eulerian path and a traversable path are all spanning paths</li>
+        <li>An Eulerian path may use a vertex more than once</li>
+        <li>An Hamiltonian path may not use all edges</li>
+    </ul>
+</div>
+
+    </div>
+
+</body>
+</html>
