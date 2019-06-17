@@ -25,7 +25,8 @@ a#overview span {
 #container {
 	width:50%;
 	margin:0px auto;
-    line-height:1.8em;
+  margin-bottom:50px;
+  line-height:1.8em;
 }
 
 @media (max-width: 1000px) {
@@ -86,4 +87,24 @@ a#overview span {
 	max-height:600px;
 }
 
+#hydrogen-wf table
+{
+    min-width:100%;
+    font-size:14px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin:0px auto;
+
+}
+#hydrogen-wf table td, #hydrogen-wf table th {
+    border: 1px solid black;
+    text-align:center;
+    padding:10px 20px;
+    max-width:350px;
+    min-width:75px;
+}
+#hydrogen-wf table div {
+    overflow:auto;
+    font-size:20px;
+}
 
