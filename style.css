@@ -29,6 +29,17 @@ a#overview span {
   line-height:1.8em;
 }
 
+#container img.center-image {
+	display:block;
+	margin:0px block;
+}
+#container figure {
+	margin-top:50px;
+	margin-bottom:50px;
+}
+#container figcaption {
+	font-style:italic;
+}
 @media (max-width: 1000px) {
   body #container {
     width:75%;
