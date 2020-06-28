@@ -39,8 +39,12 @@
 			#personal-details {
 				margin:0px;
 				padding:0px;
+				padding-top:10px;
 				display:inline-block;
 				vertical-align:top;
+			}
+			#personal {
+				text-align:justify;
 			}
 			a {
 				text-decoration:none;
@@ -53,8 +57,8 @@
 				font-style:normal;
 				margin:10px 0px;
 			}
-			h1 { font-size:55px; }
-			h2 { font-size:40px; margin:15px 0px; }
+			h1 { font-size:70px; }
+			h2 { font-size:40px; margin:15px 0px; font-weight:500; }
 			#list-left {
 				display:inline-block;
 				padding:0px;
@@ -68,7 +72,7 @@
 			}
 			.wspace {padding-right:25px;}
 			div {
-				font-size:18px;
+				font-size:16px;
 				line-height:1.5;
 				padding:12px 0px;
 			}
@@ -111,7 +115,6 @@
 				Github: <br />
 				Website: <br />
 				Location: <br />
-				Languages: <br />
 				</div>
 				<div id="list-right">
 				01/10/1997<br />
@@ -120,35 +123,32 @@
 				<a href="https://www.github.com/leon-vv/">github.com/leon-vv</a><br />
 				<a href="http://leonvv.me">leonvv.me</a><br />
 				Leiden<br />
-				Dutch, English, Italian
 				</div>
 			</div>
 
-			<div>
-			<h2>Personal</h2>
-			Known by friends as an avid traveler, a motivated student and a good companion.
-			<br /><br />	
-			My passion for travel led me to cross all of New-Zealand on a bicycle with my former girlfriend, both armed with nothing more than a backpack. As a student I joined a <a href="https://www.aegee-leiden.nl/">travel society</a> and became good friends with like-minded people.  Recently my passion for travel made me take up the challenge of living and studying in a different continent as an exchange student at the University of British Columbia.
-			<br /><br />	
-			The only thing coming close to my passion for travel, is my love for understanding. At a young age this drive made me study the workings of computers. This led to a deep understanding of computer systems and programming languages. Always seeking a more difficult challenge, I commited to understand the universe, which meant becoming a physicist.
+			<div id='personal'>
+			<h2>Personal Profile</h2>
+			Known by friends as an avid traveler, a motivated student and a good companion. The only thing coming close to my passion for travel, is my love for understanding. At a young age this drive made me study the workings of computers. This led to a deep understanding of computer systems and programming languages. Always seeking a more difficult challenge, I commited to understand the universe, which meant becoming a physicist.
 			</div>
 
 			<h2>Work Experience</h2>
 
 				<div>
-					2015 - 2017, ChannelEngine (C#) <a class="spaced" href="http://channelengine.com">www.channelengine.com</a><br />
+					2015 - 2017, ChannelEngine <a class="spaced" href="http://channelengine.com">www.channelengine.com</a><br />
 
 					<ul>
-						<li>Supported a small team in scaling the company and improving its architecture</li>
+						<li>Supported a startup to scale and improve revenue by refining the C# software architecture</li>
 						<li>Greatly improved the efficiency of the import and export of product data that flows through the system daily</li>
 						<li>Designed and implemented most of the new (version 2.0) API</li>
 						<li>Integrated third party marketplaces like Bol.com, CDiscount and Ebay to our platform</li>
-						<li>Various front-end work</li>
 					</ul>
 				</div>
 
 			<h2>Education</h2>
-
+			
+			<div>
+				09/2020, Master Applied Physics (Physics for Instrumentation), TU Delft
+			</div>
 			<div>
 				2017-2020, Physics Bachelor, Leiden University
 				<ul>
@@ -159,7 +159,7 @@
 			</div>
 			
 			<div>
-				2019, University of British Columbia (Canada), exchange program<br />
+				2019, Exchange Program, University of British Columbia (Canada)<br />
 				<ul>
 					<li>Followed courses in engineering, maths and physics (average 8.8)</li>
 					<li>Improved English speaking skills</li>
@@ -192,25 +192,60 @@
 
 				<ul>
 					<li>Graduated magna cum laude (average 8.7)</li>
-					<li>National three-hour mathematics final exam made without error</li>
+					<li>National mathematics (wiskunde B) final exam made without any errors</li>
 				</ul>
 			</div>
-				
+			
+			<div>
+			<h2>Interests</h2>
+			
+			Traveling
+			<ul>
+				<li>Backpacked New-Zealand for six months after high school</li>
+				<li>Member of a travel society (AEGEE-Leiden)</li>
+			</ul><br />
+			Sport
+			<ul>
+			<li>Indoor fitness, indoor soccer and running</li>
+			</ul>
+			</div>
+			<div>
+			<h2>Skills</h2>
+			
+			Languages
+			<ul>
+				<li>Dutch (native), English, Italian</li>
+			</ul><br />
+
+			Programming languages
+			<ul>
+				<li>High proficiency: Python, C, JavaScript (web development in general)</li>
+				<li>Moderate proficiency: Idris, Haskell, Lisp, C# </li>
+			</ul>
+			</div>
+
+	
 			<h2>Software Projects</h2>
 			
 			<div>
 				Pyka Programming Language (work in progress) <a class="spaced" href="https://github.com/leon-vv/Pyka">github.com/leon-vv/Pyka</a><br />
-				Using 'first class environments' the Pyka language can elegantly combine dynamic and lexical scoping and even reproduce the meta programming system of Common Lisp.<br />
-				Written in Python and Pyka (a Lisp language).
+				<ul>
+				<li>Improve and generalize the structure of the popular Scheme and Common Lisp programming languages</li>
+				<li>Using 'first class environments' the Pyka language can elegantly combine dynamic and lexical scoping and even reproduce the meta programming system of Common Lisp.</li>
+				<li>Written in Python and Pyka (a Lisp language).</li>
+				</ul>
 			</div>
 			<div>
 				To-do <a class="spaced" href="http://www.github.com/leon-vv/Todo">github.com/leon-vv/Todo</a><br />
-				By expressing a subset of the SQL database language in a dependent type system this project illustrates how advanced proofs about database access can be verified at compile time.<br />
-				Written in Idris.
+				<ul>
+				<li>By expressing a subset of the SQL database language in a dependent type system this project illustrates how advanced proofs about database access can be verified at compile time.</li>
+				<li>Written in Idris.</li>
+				</ul>
 			</div>
 			<div>
-				Other, smaller, projects can be found on my <a href="https://www.github.com/leon-vv/">Github</a> page.
+
 			</div>
+			
 		</div>
 
 
