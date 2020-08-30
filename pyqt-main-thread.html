@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+    <title>Leonvv | Calling a function in the main thread in PyQt</title>
+    <meta name="description" content="Calling a function in the main thread in PyQt" />
+   <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    
+    <div id='container'>
+        <a id='overview' href='/'>← <span>Top</span></a>
+        <h2>Calling a function in the main thread in PyQt</h2>
+        
+
+As UI related function in Qt are limited to the main thread, now and again it's
+useful to 'switch' from the current active thread to the main thread. One option
+to achieve this is to use the <a
+href="https://pypi.org/project/qtutils/">qtutils</a> package. However, pulling
+in a third party dependency for something that seems trivial is not very
+satisfactory. 
+
+The easiest way to execute a function on the main thread is by initializing a
+QObject while in the main thread (at the start of the application). A signal
+part of this object is automatically bound to the main thread. This means that
+slots connected to the signal are executed in the main thread. The <a
+href="https://doc.qt.io/qt-5/threads-qobject.html#signals-and-slots-across-threads">Qt signal-slot
+connection type</a> determines the blocking behaviour when emitting the signal.
+
+<div class="hll"><pre><span></span><span class="c1"># Save this file as InMain.py and import it </span>
+<span class="c1"># while in the main thread (at the start of the application)</span>
+
+<span class="kn">import</span> <span class="nn">queue</span> <span class="k">as</span> <span class="nn">q</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">InMain</span><span class="p">(</span><span class="n">QObject</span><span class="p">):</span>
+
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+	<span class="c1"># Notice we use a Qt.QueuedConnection here, change to your liking.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sig</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">execute_funs</span><span class="p">,</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QueuedConnection</span><span class="p">)</span>
+     
+    <span class="k">def</span> <span class="nf">execute_funs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
+            <span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Schedule a function to be called on the main thread.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span> <span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sig</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+
+<span class="n">inMain</span> <span class="o">=</span> <span class="n">InMain</span><span class="p">()</span>
+</pre></div>
+
+
+It's important to import the Python file containing this code while in the main
+thread, otherwise (the QObject) inMain won't be part of the main thread. To call
+a function in the main thread you can use:
+
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">InMain</span> <span class="kn">import</span> <span class="n">inMain</span>
+
+<span class="c1"># ... somewhere in the code</span>
+<span class="n">inMain</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">fun_to_call</span><span class="p">,</span> <span class="n">some_arg</span><span class="p">,</span> <span class="n">keyword_arg</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+
+
+    </div>
+
+</body>
+</html>
