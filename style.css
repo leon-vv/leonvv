@@ -1,34 +1,31 @@
 body, html {
-	margin:0px;
-	min-width:320px;
-	font-family:sans-serif;
-	font-size:17px;
+    margin:0px;
+    background: rgb(204, 204, 204);
+    font-size:1.1em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body a#overview {
-    padding:0px;
     padding-top:10px;
-    padding-bottom:30px;
     display:block;
-    color:black;
+    color:dimgrey;
     text-decoration:none;
-    font-size:20px;
-    opacity:0.75;
+    font-size:25px;
 }
 
-a#overview:hover { opacity:1; }
-a#overview span {
-    font-size:16px;
-    text-decoration:none;
-    border-bottom:1px solid black;
-}
+a#overview:hover { color:blue; }
 
 #container {
-	width:50%;
-	max-width:900px;
-	margin:0px auto;
-  margin-bottom:50px;
-  line-height:1.8em;
+	overflow:auto;
+	width:80%;
+	max-width:1000px;
+	margin:50px auto;
+	padding:30px;
+	padding-top:0px;
+	line-height:1.7em;
+	box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+	background-color:white;
+	box-sizing:border-box;
 }
 
 #container img.center-image {
@@ -42,9 +39,18 @@ a#overview span {
 #container figcaption {
 	font-style:italic;
 }
-#container h2 {
-    margin:0px;
-    margin-bottom:30px;
+
+/* Index page */
+#container #writings a {
+	display:block;	
+}
+
+#container .software {
+	padding-bottom:30px;
+}
+
+#container .software a::first-of-type {
+	display:block;
 }
 
 /* Paths overview */
@@ -198,19 +204,13 @@ a#overview span {
 /* End Pygmentize CSS */
 
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   body #container {
     width:100%;
-    padding:0px 0px;
-    box-sizing:border-box;
+    margin:0px;
   }
   .hll {
 	width:100%;
-  }
-}
-@media (max-width: 1000px) {
-  body #container {
-    width:80%;
   }
 }
 

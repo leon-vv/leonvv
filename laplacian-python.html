@@ -79,7 +79,7 @@
 <body>
     
     <div id="container">
-        <a id="overview" href="/">← <span>Top</span></a>
+        <a id="overview" href="/">← <span>Back to top</span></a>
         <h2>Solving the Laplacian on an unstructered grid using the finite element method in Python</h2>
         
 
@@ -388,10 +388,10 @@ We can read this mesh file in our Python program using <a href="https://pypi.org
 <span class="n">triangles</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">cells_dict</span><span class="p">[</span><span class="s1">'triangle'</span><span class="p">]</span>
 
 <span class="c1"># We do not want to include the sea vertices</span>
-<span class="n">inactive</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vertices</span><span class="p">),</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">inactive</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vertices</span><span class="p">),</span> <span class="bp">False</span><span class="p">)</span>
 <span class="c1">#inactive[ np.ndarray.flatten(lines[line_tags == border_tag]) ] = True</span>
-<span class="n">inactive</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">line_tags</span> <span class="o">==</span> <span class="n">inner_border_tag</span><span class="p">])</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">inactive</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">line_tags</span> <span class="o">==</span> <span class="n">outer_border_tag</span><span class="p">])</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">inactive</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">line_tags</span> <span class="o">==</span> <span class="n">inner_border_tag</span><span class="p">])</span> <span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">inactive</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">line_tags</span> <span class="o">==</span> <span class="n">outer_border_tag</span><span class="p">])</span> <span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
 
 <span class="c1"># To map the index in de 'vertices' array to an index</span>
 <span class="c1"># into our matrix we need to subtract all inactive vertices</span>

@@ -9,7 +9,7 @@
 <body>
     
     <div id='container'>
-        <a id='overview' href='/'>← <span>Top</span></a>
+        <a id='overview' href='/'>← <span>Back to top</span></a>
         <h2>Calling a function in the main thread in PyQt</h2>
         
 
@@ -30,7 +30,7 @@ connection type</a> determines the blocking behaviour when emitting the signal.
 <div class="hll"><pre><span></span><span class="c1"># Save this file as InMain.py and import it </span>
 <span class="c1"># while in the main thread (at the start of the application)</span>
 
-<span class="kn">import</span> <span class="nn">queue</span> <span class="k">as</span> <span class="nn">q</span>
+<span class="kn">import</span> <span class="nn">queue</span> <span class="kn">as</span> <span class="nn">q</span>
 <span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">class</span> <span class="nc">InMain</span><span class="p">(</span><span class="n">QObject</span><span class="p">):</span>
