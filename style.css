@@ -115,6 +115,15 @@ a#overview:hover { color:blue; }
     font-size:20px;
 }
 
+/* Finite differences */
+
+pre {
+    tab-size:70px;
+    -moz-tab-size:70px;
+    -o-tab-size:70px;
+    font-size:10px;
+}
+
 /* Pygmentize CSS for highlighting */
 .hll {
 	background-color: #49483e;
