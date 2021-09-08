@@ -19,12 +19,12 @@
 				box-sizing:border-box;
 			}
 			#profile-img {
-				width: 200px;
-				height: 200px;
+				width: 220px;
+				height: 220px;
 				margin:0px;
 				margin-right:45px;
 				padding:0px;
-				border-radius:50%;
+				border-radius:1%;
 				display:inline-block;
 				vertical-align:top;
 				box-sizing:border-box;
@@ -42,6 +42,7 @@
 				padding-left:10px;
 				display:inline-block;
 				vertical-align:top;
+				margin-bottom:80px;
 			}
 			#personal {
 				padding-top:30px;
@@ -60,7 +61,7 @@
 				padding-bottom:0px;
 			}
 			h1 { padding-bottom:15px; font-size:70px; }
-			h2 { font-size:40px; margin:10px 0px; margin-bottom:0px; font-weight:500; }
+			h2 { font-size:30px; margin:10px 0px; margin-bottom:0px; font-weight:500; }
 			#list-left {
 				display:inline-block;
 				padding:0px;
@@ -112,33 +113,46 @@
 			<div id="personal-details">
 				<div id="list-left">
 				Birthdate: <br />
-				Email: <br />
+				Email: <br /> 
 				Phone: <br />
 				Github: <br />
 				Website: <br />
+				Nationality : <br />
 				Location: <br />
 				</div>
 				<div id="list-right">
 				01/10/1997<br />
-				leonvanvelzen@protonmail.com<br />
+				leonvanvelzen@pm.me<br />
 				<script>document.write('+316 47' + '904940')</script><br />
 				<a href="https://www.github.com/leon-vv/">github.com/leon-vv</a><br />
 				<a href="http://leonvv.me">leonvv.me</a><br />
+				Dutch<br />
 				Leiden<br />
 				</div>
 			</div>
 
+			<!--
 			<div id='personal'>
 			<h2>Personal Profile</h2>
-			<div>
-			Known by friends as an avid traveler, a motivated student and a good companion. The only thing coming close to my passion for travel, is my love for understanding. At a young age this drive made me study the workings of computers. This led to a deep understanding of computer systems and programming languages. Always seeking a more difficult challenge, I commited to understand the universe, which meant becoming a physicist.
+			<div style='font-size:16px'>
+			Having cycled the length of New-Zealand during my gap year and hiked the mountains of Canada while on exchange, I always seek out new experiences. Even though I am regularly abroad, and also spend countless hours studying, I know to combine this with an active social life. Whether it's having a drink with my high school friends, a roadtrip with my travel society, or a deep discussion with my study peers, I am always reminded that while the sciences can supply a goal, only people can provide purpose.
 			</div>
-			</div>
+			</div>-->
 
 			<h2>Work Experience</h2>
+				<div>
+					2020-2021, Amsterdam Scientific Instruments <a class="spaced" href="http://amscins.com">www.amscins.com</a><br />
+
+					<ul>
+						<li>Leading developer of a novel high throughput (up to 6 Gb/s) Timepix3 data analysis pipeline (Python, Numba)</li>
+						<li>Responsible for architecture and implementation of the primary user interface used by customers to control the detectors</li>
+					</ul>
+				</div>
+			
+
 
 				<div>
-					2015 - 2017, ChannelEngine <a class="spaced" href="http://channelengine.com">www.channelengine.com</a><br />
+					2015-2017, ChannelEngine <a class="spaced" href="http://channelengine.com">www.channelengine.com</a><br />
 
 					<ul>
 						<li>Supported a startup to scale and improve revenue by refining the C# software architecture</li>
@@ -147,21 +161,21 @@
 						<li>Integrated third party marketplaces like Bol.com, CDiscount and Ebay to our platform</li>
 					</ul>
 				</div>
-
+				
+			
 			<h2>Education</h2>
 			
 			<div>
-				Starting 09/2020, Master Applied Physics (Physics for Instrumentation), TU Delft
+				2020-Present, Master Applied Physics (track Physics for Instrumentation), TU Delft
 			</div>
 			<div>
 				2017-2020, Physics Bachelor, Leiden University
 				<ul>
+					<li>Graduation cum laude (average 9.0)</li>
 					<li>Followed Advanced Theory Track (extracurricular problems sets)</li>
-					<li>Graduation most likely cum laude (current average 8.9)</li>
-					<li>Bachelor Thesis on 'Laser Induced Plasma' with a scientific publication following in the summer</li>
+					<li>Bachelor thesis on <br /><span style='display:inline-block;padding:5px 10px;'>'Flow Confinement of a Laser Induced Atmospheric Helium Plasma'</span><br />rewarded with a 9.5, results to be published in the Journal of Plasma Physics</li>
 				</ul>
 			</div>
-			
 			<div>
 				2019, Exchange Program, University of British Columbia (Canada)<br />
 				<ul>
@@ -175,22 +189,13 @@
 			</div>
 			
 			<div>
-				2017-2018, Physics Propedeuse, Leiden University<br />
-				<ul>
-					<li>Cum laude (average 8.9)</li>
-				</ul>
-			</div>
-			
-			<div>
 				2017-2018, Computer Science Propedeuse, Leiden University<br />
 				<ul>
 					<li>Cum laude (average 9.1)</li>
+					<li>Completed alongside physics bachelor (see above)</li>
 				</ul>
 			</div>
 			
-			<div>
-				2016, Pre-University Classes Computer Science, Leiden University<br />
-			</div>
 			<div>
 				2010 - 2016, Atheneum, Visser 't Hooft Lyceum Leiden <br />
 
@@ -201,6 +206,20 @@
 			</div>
 			
 			<div>
+			<h2>Skills</h2>
+			<div>	
+			Spoken languages
+			<ul>
+				<li>Dutch (native), English (fluent), Italian (proficient)</li>
+			</ul><br />
+
+			Programming languages
+			<ul>
+				<li>High proficiency: Python (+Numpy,Numba), C</li>
+				<li>Moderate proficiency: Idris, Lisp, C#, C++, Java, JavaScript (and HTML,CSS)</li>
+			</ul>
+			</div>
+
 			<h2>Interests</h2>
 			<div>
 			
@@ -212,25 +231,10 @@
 			</ul><br />
 			Sport
 			<ul>
-			<li>Indoor fitness, indoor soccer and running</li>
+			<li>Fitness, indoor soccer and running</li>
 			</ul>
 			</div>
-			</div>
-			<div>
-			<h2>Skills</h2>
-			<div>	
-			Languages
-			<ul>
-				<li>Dutch (native), English, Italian</li>
-			</ul><br />
-
-			Programming languages
-			<ul>
-				<li>High proficiency: Python, C, JavaScript (web development in general)</li>
-				<li>Moderate proficiency: Idris, Haskell, Lisp, C# </li>
-			</ul>
-			</div>
-			</div>
+					</div>
 
 	
 			<h2>Software Projects</h2>
@@ -243,7 +247,8 @@
 				<li>Written in Python and Pyka (a Lisp language).</li>
 				</ul>
 			</div>
-			<div>
+			
+			<div style="padding-bottom:0px;margin-bottom:0px">
 				To-do <a class="spaced" href="http://www.github.com/leon-vv/Todo">github.com/leon-vv/Todo</a><br />
 				<ul>
 				<li>Express a subset of the SQL database language in a dependent type system</li>
@@ -251,12 +256,7 @@
 				<li>Written in Idris.</li>
 				</ul>
 			</div>
-			<div>
-
-			</div>
-			
-		</div>
-
-
+			<br />
+	</div>
 	</body>
 </html>
