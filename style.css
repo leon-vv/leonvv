@@ -30,7 +30,7 @@ a#overview:hover { color:blue; }
 
 #container img.center-image {
 	display:block;
-	margin:0px block;
+	margin:0px;
 }
 #container figure {
 	margin-top:50px;
@@ -43,6 +43,7 @@ a#overview:hover { color:blue; }
 /* Index page */
 #container #writings a {
 	display:block;	
+	padding:5px 0px;
 }
 
 #container .software {
