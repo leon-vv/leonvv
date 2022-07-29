@@ -43,7 +43,7 @@ a#overview:hover { color:blue; }
 /* Index page */
 #container #writings a {
 	display:block;	
-	padding:5px 0px;
+	padding:4px 0px;
 }
 
 #container .software {
